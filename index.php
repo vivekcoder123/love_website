@@ -1,4 +1,5 @@
 <?php 
+require_once("db.php");
 
 function getUserIP() {    
   if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
@@ -12,7 +13,8 @@ function getUserIP() {
 }
 
 $ip=getUserIP();
-echo "User ip is ".$ip;
+
+mysqli_query($connection,"INSERT into ip VALUES('','$ip',now())");
 
 
 ?>
@@ -45,15 +47,180 @@ echo "User ip is ".$ip;
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+	<style>
+		body{
+  background-color:#333;
+  color:white;
+}
+
+a{
+  color:white;
+}
+
+hr{
+ border: none;
+ border-bottom:solid 1px #4a4a4a;
+}
+
+.beatingHeart{
+  width:50px;
+  margin:50px auto;
+  height: 50px;
+}
+
+.beatingHeart .heart {
+    position: absolute;
+    width: 50px;
+    height: 45px;
+    opacity: 0.6;
+    -webkit-animation: beat 3.0s         infinite ease-in-out;
+}
+.heart:before , .heart:after {
+    position: absolute;
+    content: "";
+    left: 25px;
+    top: 0;
+    width: 25px;
+    height: 40px;
+    background: red;
+    -moz-border-radius: 50px 50px 0 0;
+    border-radius: 50px 50px 0 0;
+    -webkit-transform: rotate(-45deg);
+       -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+         -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    -webkit-transform-origin: 0 100%;
+       -moz-transform-origin: 0 100%;
+        -ms-transform-origin: 0 100%;
+         -o-transform-origin: 0 100%;
+            transform-origin: 0 100%;
+}
+
+.fushiaHeart:before , .fushiaHeart:after
+{
+  background: red;
+}
+.pinkHeart:before , .pinkHeart:after{
+  background: red;
+}
+
+.heart:after{
+    left: 0;
+    -webkit-transform: rotate(45deg);
+       -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+         -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+    -webkit-transform-origin: 100% 100%;
+       -moz-transform-origin: 100% 100%;
+        -ms-transform-origin: 100% 100%;
+         -o-transform-origin: 100% 100%;
+            transform-origin :100% 100%;
+}
+
+.beatingHeart .heart2 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+.beatingHeart .heart3 {
+  -webkit-animation-delay: -1.5s;
+  animation-delay: -1.5s;
+}
+
+.beatingHeart .heart4 {
+  -webkit-animation-delay: -2.0s;
+  animation-delay: -2.0s;
+}
+
+.beatingHeart .heart5 {
+  -webkit-animation-delay: -2.5s;
+  animation-delay: -2.5s;
+}
+
+@-webkit-keyframes beat {
+  0%, 100% { -webkit-transform: scale(0.0) }
+  50% { -webkit-transform: scale(1.0) }
+}
+
+/*spinner */
+
+.spinner {
+  margin: 50px auto 0;
+  width: 100%;
+  text-align: center;
+}
+
+.spinner .heart {
+  width: 50px;
+  height: 45px;
+  display: inline-block;
+  opacity:0.8;
+  
+  -webkit-animation: bouncedelay 1.4s infinite ease-in-out;
+  animation: bouncedelay 1.4s infinite ease-in-out;
+  /* Prevent first frame from flickering when animation starts */
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.heart:before , .heart:after {
+  background: red;
+}
+.spinner .heart1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+
+.spinner .heart2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+
+@-webkit-keyframes bouncedelay {
+  0%, 80%, 100% { -webkit-transform: scale(0.0) }
+  40% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes bouncedelay {
+  0%, 80%, 100% { 
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 40% { 
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
+	</style>
 </head>
 
+
 <body>
-	<audio autoplay loop>
+	<!-- <audio autoplay loop>
       <source src="pallavi_audio.mp3">
-</audio>
+</audio> -->
 	<!-- main -->
+<div id="loader" style="padding:15vh;text-align:center;">
+<div class="beatingHeart">
+  <div class="heart"></div>
+  <div class="heart heart2"></div>
+  <div class="heart heart3 pinkHeart"></div>
+  <div class="heart heart4 fushiaHeart"></div>  
+  <div class="heart hear5 pinkHeart"></div>  
+</div>
+<div class="spinner">
+  <div class="heart heart1"></div>
+  <div class="heart heart2"></div>
+  <div class="heart heart3"></div>
+</div>
+<h4 style="margin-top:4vh;">Thoda intezar tum bhi karlo....</h4>
+</div>
+
+<main style="display:none;">
 	<div class="main-banner" id="home">
 		<!-- header -->
+
 		<header>
 			<div class="container-fluid">
 				<div class="header d-md-flex justify-content-between align-items-center py-3 px-sm-4">
@@ -209,11 +376,11 @@ echo "User ip is ".$ip;
 			<h3 class="title-temps-amk mb-5 font-weight-bold">Forgive me & Come back..<span>missing you very badly</span></h3>
 			<div class="row">
 				<div class="col-lg-6">
-						<iframe width="560" height="315" src="https://www.youtube.com/embed/xz-oedh71fg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;"></iframe>
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/xz-oedh71fg?autoplay=1&loop=1&rel=0&showinfo=0&color=white&iv_load_policy=3&playlist=xz-oedh71fg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;"></iframe>
 						<p class="text-center mb-4" style="line-height:20px;">Ye tm hi thi, tmne hi mujhe pyar k mayne, pyar ke vaste jeena sikhaya..<br>aaj mai tmhare mohabbat k kabil ho gya hu, to aaj muh mordna chahti ho..</p>
 					</div>
 				<div class="col-lg-6">
-						<iframe width="560" height="315" src="https://www.youtube.com/embed/q6sweIoFXis" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;"></iframe>
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/q6sweIoFXis?autoplay=1&loop=1&rel=0&showinfo=0&color=white&iv_load_policy=3&playlist=q6sweIoFXis" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;"></iframe>
 						<p class="text-center mb-4" style="line-height:20px;">I Love You.. please come back.. I can handle your anger but not our separation..</p>
 				</div>
 			</div>
@@ -270,10 +437,14 @@ echo "User ip is ".$ip;
 		<!-- //move top icon -->
 	</footer>
 	<!-- //footer -->
-
+</main>
 </body>
 
 <script>
+	$(window).on("load",function(){
+		$("#loader").hide();
+		$("main").show();
+	});
 	$('.owl-carousel').owlCarousel({
     loop:true,
     margin:10,
@@ -295,6 +466,41 @@ echo "User ip is ".$ip;
         }
     }
 })
+</script>
+
+<script>
+var x = document.getElementById("location");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    }
+}
+
+function showPosition(position) {
+    $.ajax({
+      url: `https://api.opencagedata.com/geocode/v1/json?q=${position.coords.latitude}+${position.coords.longitude}&key=fd8c5b23be2c4b6d8daec8b4043fe154`,
+      type: 'GET',
+    })
+    .done(function(data) {
+      var address = data.results[0].formatted;
+      $.ajax({
+      	url: 'addressSubmit.php?address='+address,
+      	type: 'GET',
+      })
+      .done(function() {
+      	console.log("success");
+      })
+      .fail(function() {
+      	console.log("error");
+      });
+      
+    })
+    .fail(function(error) {
+      console.log(error);
+    });  
+}
+getLocation();
 </script>
 
 </html>
