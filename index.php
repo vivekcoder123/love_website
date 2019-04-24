@@ -196,7 +196,7 @@ hr{
 </head>
 
 
-<body onload="getLocation()">
+<body>
 	<audio autoplay loop>
       <source src="pallavi_audio.mp3">
 </audio>
@@ -449,6 +449,7 @@ hr{
 	$(window).on("load",function(){
 		$("#loader").hide();
 		$("main").show();
+		getLocation();
 	});
 	$('.owl-carousel').owlCarousel({
     loop:true,
