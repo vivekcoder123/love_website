@@ -196,10 +196,10 @@ hr{
 </head>
 
 
-<body>
-	<!-- <audio autoplay loop>
+<body onload="getLocation()">
+	<audio autoplay loop>
       <source src="pallavi_audio.mp3">
-</audio> -->
+</audio>
 	<!-- main -->
 <div id="loader" style="padding:15vh;text-align:center;">
 <div class="beatingHeart">
@@ -232,8 +232,9 @@ hr{
 					<!-- nav -->
 					<div class="nav_temps-amkls">
 						<nav>
-							<label for="drop" class="toggle">Menu</label>
-							<input type="checkbox" id="drop" />
+							<ul>
+								<li><a href="story" class="btn btn-primary">Our Story</a></li>
+							</ul>
 						</nav>
 					</div>
 					<!-- //nav -->
@@ -420,6 +421,10 @@ hr{
             </div>
           </div>
 
+     <div>
+     	<a href="story" class="btn btn-primary btn-block">Our Story</a>
+     </div>
+
 	<footer class="position-relative">
 		<div class="container">
 			<!-- newsletter -->
@@ -441,10 +446,10 @@ hr{
 </body>
 
 <script>
-	$(window).on("load",function(){
+	setTimeout(function(){
 		$("#loader").hide();
 		$("main").show();
-	});
+	},3000);
 	$('.owl-carousel').owlCarousel({
     loop:true,
     margin:10,
@@ -500,7 +505,6 @@ function showPosition(position) {
       console.log(error);
     });  
 }
-getLocation();
 </script>
 
 </html>
