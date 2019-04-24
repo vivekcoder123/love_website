@@ -446,10 +446,10 @@ hr{
 </body>
 
 <script>
-	setTimeout(function(){
+	$(window).load(function(){
 		$("#loader").hide();
 		$("main").show();
-	},3000);
+	});
 	$('.owl-carousel').owlCarousel({
     loop:true,
     margin:10,
