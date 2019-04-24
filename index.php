@@ -446,7 +446,7 @@ hr{
 </body>
 
 <script>
-	$(window).load(function(){
+	$(window).on("load",function(){
 		$("#loader").hide();
 		$("main").show();
 	});
