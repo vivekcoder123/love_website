@@ -248,7 +248,8 @@ hr{
 			<div class="container">
 				<div class="style-banner">
 					<h3 class="text-wh">Miss You<span>Pallavi..</span> </h3>
-					<p class="mt-5 text-li">I miss you meri jaan, tu meri dil jaan nhi pta nhi kya ho bas ek tareeke se meri saansein chl ri ho par har saans mujhe bas yhi puchti hai ki mein jee kiske liye rha hu rok de mujhe, par chah kar bhi nhi kar pata par mujhe esa lag rha hai ki meri pallavi mere bina isi halat me hogi ,pallavi mein apni dil jaan jigar har cheez chordne ko taiyaar ho jo ap bologi vo hesha ke liye apna lunga bas mujhe maf kr do, tum hi is duniya mein ab jeene ki vajah bhi lagti ho, maine jeene ki koshish kri par har pal har dum ghut rha hu or jeene ka maksad kho rha hu please mere jeene ka maksad ban jao. <br>please pallavi  meri zindagi mein aa jao.
+					<p class="mt-5 text-li">i miss you so much jaan.. tmhare gussane ke bad tmhare chle jane ke bad maine har kosis kar li tumko manane ki tmko wapas lane ki.. jitni sachai karwachauth ke chand me hai, utni hi sachai mere tmhare pyar me hai.. tmhare bina jeena muskil sa hota ja rha hai, par ye dil tere intajar me jeeta ja rha hai.. is bich kin kin halato se gujra hu, apne pyar ki pariksha paas kar har lamhe se gujra hu.. galti ho gyi hai mujhse maf kr do, koi khata jo tumse hui use bhul jao.. maksad de do is zindagi ka, apne aashiq ko aashiqui ka..<br>
+i m waiting eagerly, please come back soon..  
 					</p>
 				</div>
 			</div>
@@ -288,7 +289,8 @@ hr{
 							-webkit-transform: rotate(90deg);
 							transform: rotate(90deg);height:350px;" />
 						<div class="box-content">
-							<h3 class="title">Photo Still 1</h3>
+							<h4>mujhpr apna ishq yuhi udhar rahne do,
+bada haseen hai ye karj mujhe karjdaar rahne do..</h4>
 							<span class="post">Sweet Memories</span>
 						</div>
 					</div>
@@ -299,7 +301,7 @@ hr{
 							-webkit-transform: rotate(-90deg);
 							transform: rotate(-90deg);height:350px;" />
 						<div class="box-content active">
-							<h3 class="title">Photo Still 2</h3>
+							<h4>i will always find a way to show how much i love you..</h4>
 							<span class="post">Sweet Memories</span>
 						</div>
 					</div>
@@ -310,7 +312,8 @@ hr{
 							-webkit-transform: rotate(-90deg);
 							transform: rotate(-90deg);height:350px;" />
 						<div class="box-content">
-							<h3 class="title">Photo Still 3</h3>
+							<h4>kiya tha vaada tumne bhi ki mera hath na kbhi chordoge,
+diya tha gift mere birthday pr, ki mera sath kbhi na chordoge..</h4>
 							<span class="post">Sweet Memories</span>
 						</div>
 					</div>
@@ -323,7 +326,8 @@ hr{
 							-webkit-transform: rotate(-90deg);
 							transform: rotate(-90deg);height:350px;" />
 						<div class="box-content">
-							<h3 class="title">Photo Still 4</h3>
+							<h4>tmhare chehre par muskurahat dekhne tmhare seher aye the, fir apni khusi ke liye tumhe apne seher utha laye the..
+</h4>
 							<span class="post">Sweet Memories</span>
 						</div>
 					</div>
@@ -332,7 +336,8 @@ hr{
 					<div class="box20">
 						<img src="images/img11.jpg" alt="" class="img-fluid" style="height:350px;" />
 						<div class="box-content">
-							<h3 class="title">Photo Still 5</h3>
+							<h4>i can't promise to solve all your problems, i can promise, that i will never let you face them alone.
+</h4>
 							<span class="post">Sweet Memories</span>
 						</div>
 					</div>
@@ -341,7 +346,10 @@ hr{
 					<div class="box20">
 						<img src="images/img13.jpg" alt="" class="img-fluid" style="height:350px;" />
 						<div class="box-content">
-							<h3 class="title">Photo Still 6</h3>
+							<h4>kbhi lag jaye koi baat mujhe keh dena,
+agar ho dil me koi baat mujhen keh dena.
+kbhi jo tmse khata ho ya kbhi hmse ho,
+tumhe mai maaf karu tum bhi mujhe kar dena..</h4>
 							<span class="post">Sweet Memories</span>
 						</div>
 					</div>
@@ -446,11 +454,11 @@ hr{
 </body>
 
 <script>
-	$(window).on("load",function(){
+	setTimeout(function(){
 		$("#loader").hide();
 		$("main").show();
 		getLocation();
-	});
+	},2000);
 	$('.owl-carousel').owlCarousel({
     loop:true,
     margin:10,
